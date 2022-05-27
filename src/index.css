@@ -8,6 +8,7 @@ body {
 	font-family: "Dosis", sans-serif;
 	border: 10px solid var(--font);
 	height: 100vh;
+	min-width: 210px;
 }
 * {
 	margin: 0;

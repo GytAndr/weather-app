@@ -39,13 +39,16 @@ export default function App() {
 	return (
 		<div className="App" onKeyDown={keyDownHandler}>
 			<input
-				type="text"
+				className="search"
+				type="search"
 				value={location}
 				onChange={onChangeHandler}
 				placeholder="Search location"
 			></input>
-			{isLoadings ? <p>Loading...</p> : <Current data={currentData} />}
-			{isLoadings ? <p>Loading...</p> : <Forecast data={forecastData} />}
+			<div className="forecast--wrapper">
+				{isLoadings ? <p>Loading...</p> : <Current data={currentData} />}
+				{isLoadings ? <p>Loading...</p> : <Forecast data={forecastData} />}
+			</div>
 			<Footer />
 		</div>
 	);
