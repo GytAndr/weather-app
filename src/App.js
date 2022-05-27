@@ -21,7 +21,7 @@ export default function App() {
 	useEffect(() => {
 		getCurrent();
 	}, []);
-	//call OpenWeatherMap API for current weather
+	//call OpenWeatherMap API for current weather and later get forecast data
 	async function getCurrent() {
 		const request = await fetch(
 			`https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=a4d4033128636d3896ae62c9330f834b&units=metric&lang=lt`

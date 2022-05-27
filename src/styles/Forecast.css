@@ -1,0 +1,10 @@
+.forecast--day {
+	list-style-type: none;
+	display: flex;
+}
+.forecast--day-img {
+	height: 1.2rem;
+}
+.forecast--daysArray {
+	padding: 0;
+}
