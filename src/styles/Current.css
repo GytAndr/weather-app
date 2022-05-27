@@ -1,0 +1,21 @@
+.current--temp {
+	font-size: 3rem;
+	font-weight: 700;
+	text-align: center;
+}
+#current--degrees {
+	font-size: 1.5rem;
+}
+.current--city {
+	font-weight: 700;
+	font-size: 1.5rem;
+}
+.current {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.current--description {
+	text-align: center;
+}
