@@ -29,16 +29,17 @@ export default function App() {
 		);
 		const current = await request.json();
 		setCurrentData(current);
+		console.log(current);
 	}
 	// //call OpenWeatherMap API forecast for 5 days
 	async function getWeatherData() {
 		const request = await fetch(
-			`https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,minutely,alerts&APPID=a4d4033128636d3896ae62c9330f834b&units=metric&lang=lt`
+			`https://api.openweathermap.org/data/2.5/onecall?lat=${currentData.coord.lat}&lon=${currentData.coord.lon}&exclude=current,minutely,hourly,alerts&appid=a4d4033128636d3896ae62c9330f834b`
 		);
 		const forecast = await request.json();
 		setForecastData(forecast);
 		setIsLoading(false);
-		console.log(forecast);
+		// console.log(forecast);
 	}
 
 	return (
@@ -55,3 +56,4 @@ export default function App() {
 		</div>
 	);
 }
+// coord: {lon: 24.35, lat: 55.7333}
