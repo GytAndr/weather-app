@@ -34,7 +34,6 @@ export default function App() {
 		const forecastData = await forecastRequest.json();
 		setForecastData(forecastData);
 		setIsLoading(false);
-		console.log(forecastData);
 	}
 
 	return (

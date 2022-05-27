@@ -1,10 +1,21 @@
 .forecast--day {
 	list-style-type: none;
 	display: flex;
+	gap: 10px;
+	justify-content: flex-start;
+	align-items: center;
 }
 .forecast--day-img {
 	height: 1.2rem;
+	margin-left: auto;
 }
 .forecast--daysArray {
 	padding: 0;
+}
+.forecast--tomorrow {
+	margin-bottom: 10px;
+	font-weight: 700;
+}
+.forecast--deg {
+	margin-left: auto;
 }

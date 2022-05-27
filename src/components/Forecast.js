@@ -5,15 +5,13 @@ export default function Forecast(props) {
 	const daysArray = props.data.daily.map((day) => {
 		return (
 			<li key={day.dt} className="forecast--day">
-				<p>
-					{new Date(day.dt * 1000).toLocaleDateString()}
-					&nbsp;
-					{day.temp.day.toFixed(0)}&deg;
-					<img
-						className="forecast--day-img"
-						src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
-					/>
-				</p>
+				<p>{new Date(day.dt * 1000).toLocaleDateString()}</p>
+				<p className="forecast--deg">{day.temp.day.toFixed(0)}&deg;</p>
+				<img
+					className="forecast--day-img"
+					src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
+					title={day.weather[0].description}
+				/>
 			</li>
 		);
 	});
