@@ -20,7 +20,6 @@ export default function App() {
 	//Use Effect to call once when page loads first time.
 	useEffect(() => {
 		getCurrent();
-		getWeatherData();
 	}, []);
 	//call OpenWeatherMap API for current weather
 	async function getCurrent() {
@@ -29,17 +28,13 @@ export default function App() {
 		);
 		const current = await request.json();
 		setCurrentData(current);
-		console.log(current);
-	}
-	// //call OpenWeatherMap API forecast for 5 days
-	async function getWeatherData() {
-		const request = await fetch(
-			`https://api.openweathermap.org/data/2.5/onecall?lat=${currentData.coord.lat}&lon=${currentData.coord.lon}&exclude=current,minutely,hourly,alerts&appid=a4d4033128636d3896ae62c9330f834b`
+		const forecastRequest = await fetch(
+			`https://api.openweathermap.org/data/2.5/onecall?lat=${current.coord.lat}&lon=${current.coord.lon}&exclude=current,minutely,hourly,alerts&appid=a4d4033128636d3896ae62c9330f834b&units=metric&lang=lt`
 		);
-		const forecast = await request.json();
-		setForecastData(forecast);
+		const forecastData = await forecastRequest.json();
+		setForecastData(forecastData);
 		setIsLoading(false);
-		// console.log(forecast);
+		console.log(forecastData);
 	}
 
 	return (
@@ -56,4 +51,3 @@ export default function App() {
 		</div>
 	);
 }
-// coord: {lon: 24.35, lat: 55.7333}
