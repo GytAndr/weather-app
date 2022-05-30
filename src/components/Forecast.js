@@ -1,8 +1,8 @@
 import "../styles/Forecast.css";
 export default function Forecast(props) {
-	const unixTimeStamp = props.data.daily[0].dt;
+	const unixTimeStamp = props.data.daily[1].dt;
 	const dateString = new Date(unixTimeStamp * 1000).toLocaleDateString();
-	const daysArray = props.data.daily.map((day) => {
+	const daysArray = props.data.daily.slice(2).map((day) => {
 		return (
 			<li key={day.dt} className="forecast--day">
 				<p>{new Date(day.dt * 1000).toLocaleDateString()}</p>
